@@ -1,36 +1,127 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🚗 FASTag Recharge Website + PWA App
 
-## Getting Started
+A modern, responsive FASTag recharge platform built with Next.js 16 that works seamlessly as both a website and a Progressive Web App (PWA). Users can manage multiple vehicles, recharge FASTags instantly, and track transaction history.
 
-First, run the development server:
+![Next.js](https://img.shields.io/badge/Next.js-16.0.0-black)
+![React](https://img.shields.io/badge/React-19.2.0-blue)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.0.0-38bdf8)
+![License](https://img.shields.io/badge/License-MIT-green)
+
+## 🌟 Features
+
+- ✅ **User Authentication** - Login & Registration system
+- ✅ **Vehicle Management** - Add, view, and manage multiple vehicles
+- ✅ **Quick Recharge** - Fast FASTag recharge with multiple payment options
+- ✅ **Transaction History** - Track all your recharge transactions
+- ✅ **Responsive Design** - Works perfectly on desktop, tablet, and mobile
+- ✅ **PWA Support** - Install as mobile app on Android/iOS
+- ✅ **Modern UI** - Clean and intuitive interface with Tailwind CSS
+- ✅ **Local Storage** - Data persistence without backend
+- ✅ **Real-time Updates** - Instant balance updates
+- ✅ **Multiple Payment Methods** - UPI, Cards, Net Banking support
+
+## 🛠️ Tech Stack
+
+- **Framework:** Next.js 16 (App Router)
+- **Frontend:** React 19.2.0
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide React
+- **Storage:** Browser LocalStorage
+- **PWA:** Web App Manifest + Service Worker Ready
+
+## 📋 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js** (version 18.0 or higher) - [Download](https://nodejs.org/)
+- **npm** (comes with Node.js) or **yarn** or **pnpm**
+- **Git** - [Download](https://git-scm.com/)
+
+To check if you have Node.js and npm installed:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+node --version
+npm --version
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## System Requirements
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+- OS: Windows 10/11, macOS 10.15+, or Linux
+- RAM: 4GB minimum (8GB recommended)
+- Disk Space: 500MB free space
+- Browser: Chrome, Firefox, Safari, or Edge (latest versions)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🚀 Installation & Setup
 
-## Learn More
+Follow these step-by-step instructions to get the project running on your local machine:
 
-To learn more about Next.js, take a look at the following resources:
+### Step 1: Clone the Repository
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Open your terminal and run:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+git clone https://github.com/vizzRG/fasttag-recharge.git
 
-## Deploy on Vercel
+# Navigate to project directory
+cd fastag-recharge
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Or download the ZIP file and extract it.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Step 2: Install Dependencies
+
+Choose your preferred package manager:
+
+Using npm:
+
+```
+npm install
+```
+
+Using yarn:
+
+```bash
+yarn install
+```
+
+Using pnpm:
+
+```
+pnpm install
+```
+
+This will install all required dependencies listed in package.json.
+
+## 📱 Running the Application
+
+### Development Mode
+
+## Start the development server:
+
+```Bash
+npm run dev
+```
+
+Or with other package managers:
+
+```Bash
+yarn dev
+#or
+pnpm dev
+```
+
+Open your browser and navigate to:
+
+- Local: http://localhost:3000
+
+## Production Mode
+
+Build and run the production version:
+
+```Bash
+# Build the application
+npm run build
+
+# Start production server
+npm start
+```
