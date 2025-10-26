@@ -125,3 +125,77 @@ npm run build
 # Start production server
 npm start
 ```
+
+## 🎯 Usage Guide
+
+### Complete User Flow
+
+1. SignUp/Login
+
+- SingUp New Account:
+
+  1. Fill in the registration form:
+
+  - Full Name (e.g., "John Doe")
+  - Email Address (e.g., "john@example.com")
+  - Phone Number (e.g., "+91 9876543210")
+  - Password
+  - Confirm Password
+  - Accept Terms & Conditions
+  - Click "Create Account"
+  - You'll be redirected to the dashboard
+
+- Login to Existing Account:
+
+  - Enter your email and password
+  - Optionally check "Remember me"
+  - Click "Login"
+
+2. Add Vehicles
+
+   - Go to "My Vehicles" from the dashboard or navigation
+
+   - Click "Add Vehicle" button
+   - Fill in vehicle details:
+   - Vehicle Number: e.g., "MH 01 AB 1234"
+   - Vehicle Type: Select from dropdown (Car, SUV, Bike, Truck, Bus)
+   - FASTag ID: Your FASTag identification number
+   - Bank Name: Select issuing bank
+   - Click "Add Vehicle"
+   - Vehicle card will appear with:
+     - Vehicle number
+     - Type
+     - FASTag ID
+     - Current balance
+     - Quick recharge button
+
+3. Recharge FASTag
+
+- Method 1: From Dashboard
+
+  - Click "Quick Recharge" card
+  - Select vehicle from dropdown
+  - Choose amount and payment method
+  - Complete recharge
+
+- Method 2: From Vehicle Card
+
+  - Find your vehicle
+  - Click "Recharge Now" button
+  - Vehicle is pre-selected
+
+- - Recharge Steps:
+
+  - Select Vehicle:
+    - Choose from your saved vehicles
+  - Choose Amount:
+    - Quick select: ₹200, ₹300, ₹500, ₹1000, ₹2000, ₹5000
+  - Or enter custom amount (minimum ₹100)
+  - Select Payment Method:
+    - UPI (Google Pay, PhonePe, Paytm)
+    - Debit/Credit Card
+    - Net Banking
+  - Review Summary: Check details in sidebar
+  - Click "Proceed to Pay"
+  - Processing: Wait for confirmation (2 seconds simulation)
+  - Success: View transaction details

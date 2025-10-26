@@ -16,10 +16,7 @@ export default function Navbar() {
   }, [pathname]);
 
   const handleLogout = () => {
-    // localStorage.removeItem("isLoggedIn");
     localStorage.clear();
-    // localStorage.removeItem("userEmail");
-    // localStorage.removeItem("userName");
     router.push("/");
   };
 

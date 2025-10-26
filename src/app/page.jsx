@@ -12,38 +12,15 @@ import {
 } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { useEffect, useState } from "react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
+import { faqs } from "@/data/faqs";
 
 export default function Home() {
-  const [deferredPrompt, setDeferredPrompt] = useState(null);
-  const [showInstallPrompt, setShowInstallPrompt] = useState(false);
-
-  useEffect(() => {
-    const handler = (e) => {
-      e.preventDefault();
-      setDeferredPrompt(e);
-      setShowInstallPrompt(true);
-    };
-
-    window.addEventListener("beforeinstallprompt", handler);
-
-    return () => {
-      window.removeEventListener("beforeinstallprompt", handler);
-    };
-  }, []);
-
-  const handleInstallClick = async () => {
-    if (!deferredPrompt) return;
-
-    deferredPrompt.prompt();
-    const { outcome } = await deferredPrompt.userChoice;
-
-    if (outcome === "accepted") {
-      setDeferredPrompt(null);
-      setShowInstallPrompt(false);
-    }
-  };
-
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
@@ -63,7 +40,7 @@ export default function Home() {
               </p>
               <div className="flex gap-4">
                 <Link
-                  href="/register"
+                  href="/dashboard"
                   className="bg-white text-[#0369a1] px-8 py-4 rounded-lg font-semibold hover:bg-[#f0f9ff] transition flex items-center gap-2"
                 >
                   Get Started <ArrowRight className="w-5 h-5" />
@@ -162,7 +139,7 @@ export default function Home() {
 
       {/* How It Works */}
       <section className="bg-gray-100 py-16 px-4">
-        <div className="max-w-6xl mx-auto text-gray-500">
+        <div className="max-w-6xl mx-auto ">
           <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -200,6 +177,40 @@ export default function Home() {
           </div>
         </div>
       </section>
+      <section className="w-full py-12 md:py-12 lg:py-32 bg-background">
+        <div className="container mx-auto px-4 md:px-6">
+          <div className="text-center mx-auto max-w-3xl mb-12">
+            <h2 className="text-4xl font-bold mb-4">
+              Frequently Asked Questions
+            </h2>
+            <p className="text-muted-foreground">
+              Find answers to common questions about our platform
+            </p>
+          </div>
+          <div className="max-w-6xl mx-auto ">
+            <Accordion
+              type="single"
+              collapsible
+              className="rounded-2xl border  border-gray-300 divide-y divide-gray-300"
+            >
+              {faqs.map((faq, index) => {
+                return (
+                  <AccordionItem
+                    key={index}
+                    value={`item-${index}`}
+                    className={"py-2 px-4  my-2"}
+                  >
+                    <AccordionTrigger className={"text-md "}>
+                      {faq.question}
+                    </AccordionTrigger>
+                    <AccordionContent>{faq.answer}</AccordionContent>
+                  </AccordionItem>
+                );
+              })}
+            </Accordion>
+          </div>
+        </div>
+      </section>
 
       {/* CTA Section */}
       <section className="bg-[#0284c7] text-white py-16 px-4">
@@ -210,40 +221,13 @@ export default function Home() {
             needs
           </p>
           <Link
-            href="/register"
+            href="/recharge"
             className="bg-white text-[#0369a1] px-8 py-4 rounded-lg font-semibold hover:bg-[#f0f9ff] transition inline-flex items-center gap-2"
           >
             Start Recharging Now <ArrowRight className="w-5 h-5" />
           </Link>
         </div>
       </section>
-
-      {/* PWA Install Prompt */}
-      {showInstallPrompt && (
-        <div className="install-prompt bg-white rounded-lg shadow-2xl p-4 max-w-md mx-4">
-          <div className="flex items-center justify-between gap-4">
-            <Smartphone className="w-10 h-10 text-[#0284c7]" />
-            <div className="flex-1">
-              <h3 className="font-semibold">Install Our App</h3>
-              <p className="text-sm text-gray-600">Get the best experience</p>
-            </div>
-            <div className="flex gap-2">
-              <button
-                onClick={handleInstallClick}
-                className="bg-[#0284c7] hover:bg-[#0369a1] text-white font-semibold py-2 px-4 rounded-lg transition duration-200 shadow-md hover:shadow-lg text-sm"
-              >
-                Install
-              </button>
-              <button
-                onClick={() => setShowInstallPrompt(false)}
-                className="bg-gray-200 hover:bg-gray-300 text-gray-800 font-semibold py-2 px-4 rounded-lg transition duration-200 text-sm"
-              >
-                Later
-              </button>
-            </div>
-          </div>
-        </div>
-      )}
 
       <Footer />
     </div>
