@@ -26,7 +26,7 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link
-            href="/"
+            href={isLoggedIn ? "/dashboard" : "/"}
             className="flex items-center gap-2 font-bold text-xl text-[#0284c7]"
           >
             <CreditCard className="w-6 h-6" />

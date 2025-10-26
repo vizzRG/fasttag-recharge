@@ -14,7 +14,6 @@ export default function Recharge() {
   const [amount, setAmount] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
   const [step, setStep] = useState(1);
-  const [transactionId, setTransactionId] = useState("");
 
   const quickAmounts = [200, 300, 500, 1000, 2000, 5000];
 

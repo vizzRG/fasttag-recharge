@@ -19,8 +19,16 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { faqs } from "@/data/faqs";
-
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 export default function Home() {
+  const router = useRouter();
+  useEffect(() => {
+    if (!!localStorage.getItem("isLoggedIn")) {
+      router.push("/dashboard");
+    }
+  });
+
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
