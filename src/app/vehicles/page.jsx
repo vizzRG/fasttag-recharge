@@ -77,7 +77,7 @@ export default function Vehicles() {
           </div>
           <button
             onClick={() => setShowAddForm(!showAddForm)}
-            className="bg-[#0284c7] hover:bg-[#0369a1] text-white font-semibold py-2 px-4 rounded-lg transition duration-200 shadow-md hover:shadow-lg flex items-center gap-2"
+            className="bg-[#0284c7] hover:bg-[#0369a1] text-white font-semibold py-1 px-2 md:px-4 md:py-2 rounded-lg transition duration-200 shadow-md hover:shadow-lg flex items-center gap-2"
           >
             <Plus className="w-5 h-5" />
             Add Vehicle

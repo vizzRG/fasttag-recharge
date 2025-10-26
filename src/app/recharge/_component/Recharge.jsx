@@ -14,6 +14,7 @@ export default function Recharge() {
   const [amount, setAmount] = useState("");
   const [paymentMethod, setPaymentMethod] = useState("");
   const [step, setStep] = useState(1);
+  const [transactionId, setTransactionId] = useState("");
 
   const quickAmounts = [200, 300, 500, 1000, 2000, 5000];
 
@@ -52,6 +53,7 @@ export default function Recharge() {
         date: new Date().toISOString().split("T")[0],
         status: "Success",
         paymentMethod,
+        transactionId: `TXN${Date.now()}`,
       };
       const transactions = JSON.parse(
         localStorage.getItem("transactions") || "[]"

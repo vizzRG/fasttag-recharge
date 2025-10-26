@@ -16,9 +16,10 @@ export default function Navbar() {
   }, [pathname]);
 
   const handleLogout = () => {
-    localStorage.removeItem("isLoggedIn");
-    localStorage.removeItem("userEmail");
-    localStorage.removeItem("userName");
+    // localStorage.removeItem("isLoggedIn");
+    localStorage.clear();
+    // localStorage.removeItem("userEmail");
+    // localStorage.removeItem("userName");
     router.push("/");
   };
 
@@ -105,7 +106,7 @@ export default function Navbar() {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-lg hover:bg-gray-100"
+            className="md:hidden p-2 rounded-lg hover:bg-gray-100 text-gray-400"
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
           </button>
@@ -115,7 +116,7 @@ export default function Navbar() {
         {isOpen && (
           <div className="md:hidden py-4 border-t">
             {isLoggedIn ? (
-              <div className="flex flex-col gap-4">
+              <div className="flex flex-col gap-4 text-gray-500">
                 <Link
                   href="/dashboard"
                   className="hover:text-[#0284c7] transition"
@@ -158,7 +159,7 @@ export default function Navbar() {
               <div className="flex flex-col gap-4">
                 <Link
                   href="/login"
-                  className="hover:text-[#0284c7] transition"
+                  className="hover:text-[#0284c7]  hover:bg-[#0369a1] text-gray-500 font-semibold py-2 px-4 rounded-lg transition duration-200 shadow-md hover:shadow-lg inline-block text-center"
                   onClick={() => setIsOpen(false)}
                 >
                   Login
