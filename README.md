@@ -199,3 +199,26 @@ npm start
   - Click "Proceed to Pay"
   - Processing: Wait for confirmation (2 seconds simulation)
   - Success: View transaction details
+
+## 🤝 Contributing
+
+Contributions are welcome!
+If you’d like to add features or fix bugs:
+
+- Fork the repo
+
+- Create your branch (git checkout -b feature/new-feature)
+
+- Commit your changes (git commit -m 'Add new feature')
+
+- Push to your branch (git push origin feature/new-feature)
+
+- Create a Pull Request
+
+## 📜 License
+
+This project is licensed under the MIT License – feel free to use and modify it.
+
+## 🌐 Live Demo
+
+https://fasttag-recharge.vercel.app/
