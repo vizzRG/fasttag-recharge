@@ -10,6 +10,7 @@ import {
   Car,
   Clock,
 } from "lucide-react";
+import { motion } from "framer-motion";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import {
@@ -37,7 +38,12 @@ export default function Home() {
 
       <section className=" bg-linear-to-br from-[#0284c7] via-[#0369a1] to-[#075985] text-white py-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <motion.div
+            whileInView={{ opacity: 1, y: 0 }}
+            initial={{ opacity: 0, y: 50 }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
+            className="grid md:grid-cols-2 gap-12 items-center"
+          >
             <div>
               <h1 className="text-5xl font-bold mb-6 leading-tight">
                 Fast & Secure FASTag Recharge
@@ -68,13 +74,18 @@ export default function Home() {
                 <p className="text-center text-lg">Quick Recharge in 3 Steps</p>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* Features Section */}
       <section className="py-16 px-4">
-        <div className="max-w-6xl mx-auto">
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-6xl mx-auto"
+        >
           <h2 className="text-3xl font-bold text-center mb-12">
             Why Choose Us?
           </h2>
@@ -142,12 +153,17 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* How It Works */}
       <section className="bg-gray-100 py-16 px-4">
-        <div className="max-w-6xl mx-auto ">
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-6xl mx-auto "
+        >
           <h2 className="text-3xl font-bold text-center mb-12">How It Works</h2>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -183,10 +199,15 @@ export default function Home() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
       <section className="w-full py-12 md:py-12 lg:py-32 bg-background">
-        <div className="container mx-auto px-4 md:px-6">
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="container mx-auto px-4 md:px-6"
+        >
           <div className="text-center mx-auto max-w-3xl mb-12">
             <h2 className="text-4xl font-bold mb-4">
               Frequently Asked Questions
@@ -217,12 +238,17 @@ export default function Home() {
               })}
             </Accordion>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* CTA Section */}
       <section className="bg-[#0284c7] text-white py-16 px-4">
-        <div className="max-w-4xl mx-auto text-center">
+        <motion.div
+          whileInView={{ opacity: 1, y: 0 }}
+          initial={{ opacity: 0, y: 50 }}
+          transition={{ duration: 0.8, ease: "easeOut" }}
+          className="max-w-4xl mx-auto text-center"
+        >
           <h2 className="text-3xl font-bold mb-6">Ready to Recharge?</h2>
           <p className="text-xl mb-8 text-[#e0f2fe]">
             Join thousands of happy customers who trust us for their FASTag
@@ -234,7 +260,7 @@ export default function Home() {
           >
             Start Recharging Now <ArrowRight className="w-5 h-5" />
           </Link>
-        </div>
+        </motion.div>
       </section>
 
       <Footer />
